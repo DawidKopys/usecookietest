@@ -4,6 +4,7 @@
     <div>
       <button @click="fetchThis">fetch from test-set-cookie</button>
       <button @click="readCookie">read test-cookie</button>
+      <button @click="setCookie">set test-cookie to '123'</button>
     </div>
   </div>
 </template>
@@ -21,4 +22,11 @@ const readCookie = () => {
   const testCookie = useCookie('test-cookie').value
   console.log('testCookie :', testCookie)
 }
+
+const setCookie = () => {
+  const testCookie = useCookie('test-cookie')
+  testCookie.value = 123
+}
+
+const testCookie = useCookie('test-cookie').value
 </script>
